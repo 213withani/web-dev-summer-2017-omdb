@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="omdbApp">
 
 <head>
     <link rel="stylesheet" href="../../assignment/css/bootstrap.min.css">
-    <script src="../../vendor/angular/angular.js"></script>
-    <script src="../../vendor/angular/angular-route.js"></script>
+    <script src="../../vendor/angular/angular.min.js"></script>
+    <script src="../../vendor/angular/angular-route.min.js"></script>
+    <script src="app.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,11 +13,11 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container-fluid" ng-controller="searchController as model">
         <h1>OMDB API</h1>
         <h2>Search by Movie</h2>
         <input placeholder="Batman" class="form-control" />
-        <button class="btn btn-primary btn-block">Search</button>
+        <button ng-click="model.searchMovieByTitle()" class="btn btn-primary btn-block">Search</button>
     </div>
 </body>
 
