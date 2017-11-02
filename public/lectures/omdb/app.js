@@ -5,6 +5,7 @@
 
     function searchController() {
         var model = this;
+        //Event handler
         model.searchMovieByTitle = searchMovieByTitle;
 
         function init() {
@@ -12,8 +13,8 @@
         }
         init();
 
-        function searchMovieByTitle() {
-            alert("searchMovieByTitle");
+        function searchMovieByTitle(movieTitle) {
+            alert(movieTitle);
         }
     }
 })();

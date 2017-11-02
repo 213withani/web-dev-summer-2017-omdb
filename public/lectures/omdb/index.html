@@ -16,8 +16,13 @@
     <div class="container-fluid" ng-controller="searchController as model">
         <h1>OMDB API</h1>
         <h2>Search by Movie</h2>
-        <input placeholder="Batman" class="form-control" />
-        <button ng-click="model.searchMovieByTitle()" class="btn btn-primary btn-block">Search</button>
+        <input placeholder="Batman" 
+            ng-model="movieTitle" 
+            class="form-control" />
+        <button ng-click="model.searchMovieByTitle(movieTitle)" 
+            class="btn btn-primary btn-block">
+            Search
+        </button>
     </div>
 </body>
 
