@@ -24,7 +24,12 @@
         <table class="table">
             <tr ng-repeat="movie in model.movies.Search">
                 <td>
-                    {{movie.Title}}
+                    <a href="#!/details/{{movie.imdbID}}">
+                        {{movie.Title}}
+                    </a>
+                </td>
+                <td>
+                    <img ng-src="{{movie.Poster}}" alt="" srcset="">
                 </td>
             </tr>
         </table>
