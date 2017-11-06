@@ -1,9 +1,19 @@
 (function () {
     // Usually service lets you do CRUD operations
     angular
-        .module("omdbApp", [])
+        .module("omdbApp", ["ngRoute"])
+        .config(configuration)
         .controller("searchController", searchController)
         .service("movieService", movieService);
+
+    function configuration($routeProvider) {
+        $routeProvider
+            .when("/", {
+                templateUrl: "search.html",
+                controller: "searchController",
+                controllerAs: "model"
+            });
+    }
 
     function searchController(movieService) {
         var model = this;
