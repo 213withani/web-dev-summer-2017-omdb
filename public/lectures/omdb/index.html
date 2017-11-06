@@ -16,15 +16,18 @@
     <div class="container-fluid" ng-controller="searchController as model">
         <h1>OMDB API</h1>
         <h2>Search by Movie</h2>
-        <input placeholder="Batman" 
-            ng-model="movieTitle" 
-            class="form-control" />
-        <button ng-click="model.searchMovieByTitle(movieTitle)" 
-            class="btn btn-primary btn-block">
+        <input placeholder="Batman" ng-model="movieTitle" class="form-control" />
+        <button ng-click="model.searchMovieByTitle(movieTitle)" class="btn btn-primary btn-block">
             Search
         </button>
 
-        {{model.movies}}
+        <table class="table">
+            <tr ng-repeat="movie in model.movies.Search">
+                <td>
+                    {{movie.Title}}
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 
