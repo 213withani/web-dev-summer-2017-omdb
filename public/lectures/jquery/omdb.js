@@ -11,13 +11,13 @@
 
         function searchByTitle() {
             var movieTitle = searchByTitleFld.val();
-            url="www.omdbapi.com/?s="+movieTitle+"&apikey=852159f0"
+            url = "http://www.omdbapi.com/?s=" + movieTitle + "&apikey=852159f0"
             $.ajax({
                 url: url,
                 success: renderMovies,
-                error:function () {
+                error: function () {
                     alert("oops");
-                } 
+                }
             });
         }
         function renderMovies(response) {
