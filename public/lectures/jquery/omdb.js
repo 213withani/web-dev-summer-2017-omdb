@@ -20,8 +20,33 @@
                 }
             });
         }
+
         function renderMovies(response) {
             console.log(response);
+
+            var table = $("<table>");
+            table.addClass("table");
+
+            for (var m in response.Search) {
+                var movie = response.Search[m];
+                // Creating a table row and appending each td for each column
+                var tr = $("<tr>");
+                // column
+                var td = $("<td>");
+                td.append(movie.Title);
+                tr.append(td);
+
+                var img = $("<img>");
+                img.attr("src", movie.Poster);
+
+                // column
+                td = $("<td>");
+                td.append(img);
+                tr.append(td);
+
+                table.append(tr);
+            }
+            $("#searchResults").append(table);
         }
     }
 })();
