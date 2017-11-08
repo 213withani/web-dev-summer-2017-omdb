@@ -2,6 +2,7 @@
     $(init);
 
     function init() {
+
         // Bind to the html tags
         var searchByTitleBtn = $("#searchByTitleBtn");
         var searchByTitleFld = $("#searchByTitleFld");
@@ -38,7 +39,7 @@
 
                 var img = $("<img>");
                 img.attr("src", movie.Poster);
-
+                img.attr("height", "100");
                 // column
                 td = $("<td>");
                 td.append(img);
@@ -47,6 +48,7 @@
                 table.append(tr);
             }
             $("#searchResults").append(table);
+            table.sortable();
         }
     }
 })();
