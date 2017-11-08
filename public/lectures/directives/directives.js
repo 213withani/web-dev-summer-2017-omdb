@@ -1,7 +1,6 @@
 (function () {
     angular
-        .module("directivesApp", [])
-        .controller("directiveController", directiveController)
+        .module("myDirectives", [])
         .directive("itemList", itemListDirective)
         .directive("hello", helloDirective);
 
