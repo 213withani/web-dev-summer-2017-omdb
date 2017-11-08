@@ -1,26 +1,7 @@
 (function () {
     angular
-        .module("directivesApp", [])
-        .controller("directiveController", directiveController)
-        .directive("itemList", itemListDirective)
-        .directive("hello", helloDirective);
-
-    function itemListDirective() {
-        function linkFunction(scope, element) {
-            var ul = element.find("ul");
-            ul.sortable();
-        }
-        return {
-            templateUrl: "widget-list.html",
-            link: linkFunction
-        }
-    }
-
-    function helloDirective() {
-        return {
-            templateUrl: "helloWorld.html"
-        }
-    }
+        .module("directivesApp", ["myDirectives"])
+        .controller("directiveController", directiveController);
 
     function directiveController($scope) {
         $scope.message = "Hello Controller";
